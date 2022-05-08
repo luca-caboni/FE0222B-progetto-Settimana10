@@ -7,7 +7,7 @@
 
 
 ## Necessario per la corretta compilazione del progetto
-- Bootstrap (npm i bootstrap)
+- Bootstrap
 - FontAwesomeIcons
 
 

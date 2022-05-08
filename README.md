@@ -8,9 +8,13 @@
 
 ## Necessario per la corretta compilazione del progetto
 - Bootstrap (npm i bootstrap)
+- FontAwesomeIcons
 
 
-Ho aggiunto le icone di FontAwesome. Dovrebbero vedersi senza problemi, per aggiungerle ho seguito la documentazione.
 
-In caso non si visualizzassero:
+Per aggiungere i pacchetti
+> npm i bootstrap
+
+
+
 > ng add @fortawesome/angular-fontawesome@

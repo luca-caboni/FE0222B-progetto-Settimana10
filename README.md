@@ -1,7 +1,7 @@
-# Installazione Bootstrap
-ho installato bootstrap tramite npm, e l'ho importato nel css globale
+#Per questo progetto è indispensabile "Bootstrap"
+Inserire "npm i bootstrap" nel terminale per installarlo, altrimenti non sarà possibile visualizzare e compilare correttamente il progetto.
 
-# ProgettoSettimana10
+# ProgettoSettimana10 whith Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 

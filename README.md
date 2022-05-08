@@ -1,6 +1,16 @@
-# FE0222B-progetto-Settimana10 with Angular
+# TO-DO LIST
+## _FE0222B Settimana 10
 
-# Per la corretta visualizzazione e compilazione del progetto è necessario "Bootstrap".
-Installarlo prima di avviare la compilazione!
 
----- Da terminale inserire "npm i bootstrap" ----
+
+
+
+
+## Necessario per la corretta compilazione del progetto
+- Bootstrap (npm i bootstrap)
+
+
+Ho aggiunto le icone di FontAwesome. Dovrebbero vedersi senza problemi, per aggiungerle ho seguito la documentazione.
+
+In caso non si visualizzassero:
+> ng add @fortawesome/angular-fontawesome@

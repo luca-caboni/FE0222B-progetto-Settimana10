@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DaCompletareComponent } from './pages/da-completare/da-completare.component';
 import { CompletatiComponent } from './pages/completati/completati.component';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';                                                    //Modulo di FontAwesome
+
 
 const routes: Route[] = [
   {
@@ -30,7 +32,8 @@ const routes: Route[] = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

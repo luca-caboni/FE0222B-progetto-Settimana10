@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ToDo } from 'src/app/interface/to-do-model';
+import { ToDo } from 'src/app/interface/todo';
 import * as TaskService from '../../service/task.service';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -8,6 +10,9 @@ import * as TaskService from '../../service/task.service';
   styleUrls: ['./da-completare.component.scss']
 })
 export class DaCompletareComponent implements OnInit {
+
+  faCheck = faCheck;                        //Variabili per FontAwesome
+  faClipboardList = faClipboardList;        //
 
 
 

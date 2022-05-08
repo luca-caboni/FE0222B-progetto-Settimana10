@@ -2,7 +2,7 @@
   <form class="row gy-2 gx-3 align-items-center d-flex justify-content-center">
     <div class="col-auto">
       <label class="visually-hidden w-100" for="autoSizingInput">cose da fare</label>
-      <input type="text" class="form-control w-100" id="autoSizingInput" placeholder=" Cosa vuoi fare?"
+      <input type="text" class="form-control w-100" id="autoSizingInput" placeholder=" Inserisci una task"
         [(ngModel)]="cosaDaAggiungere" name="inputDiImmissione" (click)="reset($event)">
     </div>
 
@@ -23,6 +23,7 @@
 <div class="container mt-2">
   <table *ngIf="pieno" class="table">
     <thead>
+      <h4><fa-icon class="mx-2"[icon]="faClipboardList"></fa-icon>Cosa devo fare...</h4>
       <tr>
         <th scope="col"></th>
         <th scope="col"></th>
@@ -30,9 +31,9 @@
     </thead>
     <tbody>
       <tr class='fs-5' *ngFor="let task of listaDaFare; let i = index ">
-        <td><span class="fw-bold">{{(i + 1) + '. '}}</span> {{task.title}}</td>
+        <td><span class="fw-bold mx-3">{{(i + 1) + '. '}}</span>{{task.title}}</td>
         <td class="d-flex justify-content-end">
-          <button class="btn btn-success" (click)="completato(i)"> √ </button>
+          <button class="btn btn-success" (click)="completato(i)"><fa-icon [icon]="faCheck"></fa-icon></button>
         </td>
       </tr>
     </tbody>

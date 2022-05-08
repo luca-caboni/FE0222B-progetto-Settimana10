@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ToDo } from '../interface/to-do-model';
+import { ToDo } from '../interface/todo';
 
 let listaDaFare: ToDo[] = [];
 let listaFatti: ToDo[] = [];
@@ -21,6 +21,5 @@ export function aggiungiFatto(task: ToDo){
 export function recuperaFatti(){
   return listaFatti
 }
-
 
 

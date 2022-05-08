@@ -6,84 +6,83 @@ import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  templateUrl: './da-completare.component.html',
-  styleUrls: ['./da-completare.component.scss']
+    templateUrl: './da-completare.component.html',
+    styleUrls: ['./da-completare.component.scss']
 })
 export class DaCompletareComponent implements OnInit {
 
-  faCheck = faCheck;                        //Variabili per FontAwesome
-  faClipboardList = faClipboardList;        //
+    faCheck = faCheck;                        //Variabili per FontAwesome
+    faClipboardList = faClipboardList;        //
 
 
 
-  listaDaFare: ToDo[] = [];
-  cosaDaAggiungere: string = ''; // ho inizializzato le variabili
-  i = 0;
-  caricamento = true;
-  vuoto = false;
-  pieno = false;
+    listaDaFare: ToDo[] = [];
+    cosaDaAggiungere: string = '';           // ho inizializzato le variabili
+    i = 0;
+    caricamento = true;
+    vuoto = false;
+    pieno = false;
 
 
 
 
-  constructor() {
-    setTimeout(() => {
-      this.caricamento = false;
-      this.listaDaFare = TaskService.recupera();
-      if (this.listaDaFare.length != 0) {
-        this.pieno = true
-      }
-      else {
-        this.vuoto = true
-      }
-    }, 2000);
-  }
-
-  aggiungi(cosaDaAggiungere: string): void {
-    if (cosaDaAggiungere == '') {
-      alert('riempi il campo');
+    constructor() {
+        setTimeout(() => {
+            this.caricamento = false;
+            this.listaDaFare = TaskService.recupera();
+            if (this.listaDaFare.length != 0) {
+                this.pieno = true
+            }
+            else {
+                this.vuoto = true
+            }
+        }, 2000);
     }
-    setTimeout(() => {
-      if (cosaDaAggiungere != '') {
-        this.vuoto = false;
-        this.pieno = true;
 
-        let task: ToDo = {
-          id: this.i,
-          title: cosaDaAggiungere,
-          completed: false
-        };
+    aggiungi(cosaDaAggiungere: string): void {
+        if (cosaDaAggiungere == '') {
+            alert('riempi il campo');
+        }
+        setTimeout(() => {
+            if (cosaDaAggiungere != '') {
+                this.vuoto = false;
+                this.pieno = true;
 
-        this.listaDaFare = TaskService.aggiungi(task);
-        this.i++;
-      }
-    }, 2000);
+                let task: ToDo = {
+                    id: this.i,
+                    title: cosaDaAggiungere,
+                    completed: false
+                };
 
-
-  }
-
-  /* ogni volta che si clicca sull'input cancella quello scritto in precedenza */
-
-  reset(event: any): void {
-    event.target.value = '';
-  }
+                this.listaDaFare = TaskService.aggiungi(task);
+                this.i++;
+            }
+        }, 2000);
 
 
-  completato(index: number): void {
-    setTimeout(() => {
-      TaskService.aggiungiFatto(this.listaDaFare[index]);
-
-      (this.listaDaFare).splice(index, 1);
-      if (this.listaDaFare.length == 0) {
-        this.pieno = false;
-        this.vuoto = true;
-      };
-    }, 2000);
-
-  }
+    }
 
 
+    reset(event: any): void {           // ogni volta che si clicca sull'input cancella quello scritto in precedenza
+        event.target.value = '';
+    }
 
-  ngOnInit(): void { }
+
+    completato(index: number): void {
+        setTimeout(() => {
+            TaskService.aggiungiFatto(this.listaDaFare[index]);
+
+            (this.listaDaFare).splice(index, 1);
+            if (this.listaDaFare.length == 0) {
+                this.pieno = false;
+                this.vuoto = true;
+            };
+        }, 2000);
+
+    }
+
+
+
+    ngOnInit(): void { }
 
 }

@@ -1,22 +1,26 @@
 <div class="container mt-4 d-flex justify-content-center">
-  <p *ngIf="caricamento"> Caricamento della lista... </p>
-  <p *ngIf="vuoto"> Sembrerebbe vuoto... </p>
+    <p *ngIf="caricamento"> Caricamento della lista... </p>
+    <p *ngIf="vuoto"> Sembrerebbe vuoto... </p>
 </div>
 
 
 <div class="container mt-2">
-  <table *ngIf="pieno" class="table">
-    <thead>
-      <h4><fa-icon class="mx-2"[icon]="faListCheck"></fa-icon>Cosa ho già fatto...</h4>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class='fs-5' *ngFor="let task of listaFatti; let i = index ">
-        <td><span class="fw-bold text-success mx-3"><fa-icon [icon]="faCircleCheck"></fa-icon> </span> {{task.title}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <table *ngIf="pieno" class="table">
+        <thead>
+            <h4>
+                <fa-icon class="mx-2" [icon]="faListCheck"></fa-icon>Cosa ho già fatto...
+            </h4>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='fs-5' *ngFor="let task of listaFatti; let i = index ">
+                <td><span class="fw-bold text-success mx-3">
+                        <fa-icon [icon]="faCircleCheck"></fa-icon>
+                    </span> {{task.title}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

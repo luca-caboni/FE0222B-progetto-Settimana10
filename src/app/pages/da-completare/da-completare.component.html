@@ -1,41 +1,45 @@
 <div class="container mt-5">
-  <form class="row gy-2 gx-3 align-items-center d-flex justify-content-center">
-    <div class="col-auto">
-      <label class="visually-hidden w-100" for="autoSizingInput">cose da fare</label>
-      <input type="text" class="form-control w-100" id="autoSizingInput" placeholder=" Inserisci una task"
-        [(ngModel)]="cosaDaAggiungere" name="inputDiImmissione" (click)="reset($event)">
-    </div>
+    <form class="row gy-2 gx-3 align-items-center d-flex justify-content-center">
+        <div class="col-auto">
+            <label class="visually-hidden w-100" for="autoSizingInput">cose da fare</label>
+            <input type="text" class="form-control w-100" id="autoSizingInput" placeholder=" Inserisci una task"
+                [(ngModel)]="cosaDaAggiungere" name="inputDiImmissione" (click)="reset($event)">
+        </div>
 
-    <div class="col-auto">
-      <button type="button" class="btn btn-primary" (click)="aggiungi(cosaDaAggiungere)"> Aggiungi </button>
-    </div>
-  </form>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" (click)="aggiungi(cosaDaAggiungere)"> Aggiungi </button>
+        </div>
+    </form>
 </div>
 
 <div class="container mt-4 d-flex justify-content-center">
-  <p *ngIf="caricamento"> Caricamento della lista... </p>
-  <p *ngIf="vuoto"> Sembrerebbe vuoto... Aggiungi una task! </p>
+    <p *ngIf="caricamento"> Caricamento della lista... </p>
+    <p *ngIf="vuoto"> Sembrerebbe vuoto... Aggiungi una task! </p>
 
 
 </div>
 
 
 <div class="container mt-2">
-  <table *ngIf="pieno" class="table">
-    <thead>
-      <h4><fa-icon class="mx-2"[icon]="faClipboardList"></fa-icon>Cosa devo fare...</h4>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class='fs-5' *ngFor="let task of listaDaFare; let i = index ">
-        <td><span class="fw-bold mx-3">{{(i + 1) + '. '}}</span>{{task.title}}</td>
-        <td class="d-flex justify-content-end">
-          <button class="btn btn-success" (click)="completato(i)"><fa-icon [icon]="faCheck"></fa-icon></button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table *ngIf="pieno" class="table">
+        <thead>
+            <h4>
+                <fa-icon class="mx-2" [icon]="faClipboardList"></fa-icon>Cosa devo fare...
+            </h4>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='fs-5' *ngFor="let task of listaDaFare; let i = index ">
+                <td><span class="fw-bold mx-3">{{(i + 1) + '. '}}</span>{{task.title}}</td>
+                <td class="d-flex justify-content-end">
+                    <button class="btn btn-success" (click)="completato(i)">
+                        <fa-icon [icon]="faCheck"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

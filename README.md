@@ -10,7 +10,7 @@
 
 ## Necessario per la corretta compilazione del progetto
 - Bootstrap
-- FontAwesomeIcons
+- FontAwesomeIcons(version: FontAwesome6, icon package: Free Solid Icons)
 
 
 
@@ -20,3 +20,4 @@ Per aggiungere i pacchetti
 
 
 > ng add @fortawesome/angular-fontawesome@
+
